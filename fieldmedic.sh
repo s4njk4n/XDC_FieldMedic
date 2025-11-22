@@ -129,12 +129,12 @@ while true; do
       last_daily=$(cat "$last_daily_file" 2>/dev/null || echo "1970-01-01")
 
       if [[ "$tz_aest_day" > "$last_daily" && "${tz_aest_hour#0}" -ge 8 ]]; then
-        send_ntfy "Daily check: $name is functioning fine"
+        send_ntfy "XDC FieldMedic: Daily check: $name is functioning fine"
         echo "$tz_aest_day" > "$last_daily_file"
       fi
 
       if [[ $excluded == 1 ]]; then
-        send_ntfy "$name is back to normal"
+        send_ntfy "XDC FieldMedic: $name is back to normal"
         echo 0 > "$excluded_file"
       fi
     else
@@ -147,7 +147,7 @@ while true; do
       echo 0 > "$attempts_file"
       local fixed=0
       for ((try=0; try<3; try++)); do
-        send_ntfy "Error detected on $name: RPC not responding correctly. Attempting reboot $((try+1))/3."
+        send_ntfy "XDC FieldMedic: Error detected on $name: RPC not responding correctly. Attempting reboot $((try+1))/3."
         log "Rebooting $name ($ip)"
         ssh -o ConnectTimeout=10 "$user"@"$ip" sudo reboot || log "Reboot command failed for $name"
 
@@ -156,16 +156,16 @@ while true; do
 
         # Check again
         if check_rpc "$rpc_url"; then
-          send_ntfy "Reboot $((try+1)) fixed the issue on $name."
+          send_ntfy "XDC FieldMedic: Reboot $((try+1)) fixed the issue on $name."
           fixed=1
           break
         else
-          send_ntfy "Reboot $((try+1)) did not fix the issue on $name, still erroring."
+          send_ntfy "XDC FieldMedic: Reboot $((try+1)) did not fix the issue on $name, still erroring."
         fi
       done
 
       if [[ $fixed == 0 ]]; then
-        send_ntfy "Automated remediation failed for $name after 3 attempts. Manual intervention needed."
+        send_ntfy "XDC FieldMedic: Automated remediation failed for $name after 3 attempts. Manual intervention needed."
         echo 1 > "$excluded_file"
       else
         echo 0 > "$attempts_file"
