@@ -14,7 +14,7 @@ XDC FieldMedic reads a CSV list of your nodes, checks their RPCs every few minut
 
 - Checks RPC for errors or lag at set intervals.
 - Auto-reboots remote server (up to 3 tries) and verifies if it worked.
-- Notifies via 1 or 2 ntfy topics per node (errors, fixes, failures, daily "all good" health ping).
+- Notifies your mobile phone via 1 or 2 ntfy topics per node (errors, fixes, failures, daily "all good" health ping).
 - Logs with timestamps, auto-trimmed to 48 hours to avoid chewing up the whole drive with logs.
 - Easy tweaks (all vars up top in the script).
 
