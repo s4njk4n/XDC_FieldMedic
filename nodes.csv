@@ -1,0 +1,4 @@
+node_name,username,ip,rpc_url,ntfy1,ntfy2,expiry
+node1,user1,192.168.1.100,http://192.168.1.100:8989,ntfy_topic1,ntfy_topic2,2026-12-31
+node2,user2,10.0.0.5,https://rpc.example.com:443,ntfy_topic3,,2025-11-30
+node3,user3,172.16.0.10,http://172.16.0.10:8545,ntfy_topic1,ntfy_topic4,2027-01-15
