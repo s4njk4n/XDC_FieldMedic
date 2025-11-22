@@ -8,7 +8,7 @@ This Bash script that keeps an eye on XDC masternode RPC endpoints. It pings the
 
 ## What It Does
 
-XDC FieldMedic reads a CSV of your nodes, checks their RPCs every few minutes (you set the interval), and if one's acting up, it tries rebooting the server up to 3 times. After each reboot, it waits a bit and checks again. If it fixes it, great! It then sends a "fixed" note. If not, it flags it for manual fix and stops trying. Also does daily "all good" pings at 8 AM AEST and logs everything. Logs are trimmed of old information after 48 hours.
+XDC FieldMedic reads a CSV list of your nodes, checks their RPCs every few minutes (you set the interval), and if one's acting up, it tries rebooting the server up to 3 times. After each reboot, it waits a bit and checks again. If it fixes it, great! It then sends a "fixed" note. If not, it flags it for manual fix and stops trying. Also does daily "all good" pings at 8 AM AEST and logs everything. Logs are trimmed of old information after 48 hours.
 
 ## Features
 
