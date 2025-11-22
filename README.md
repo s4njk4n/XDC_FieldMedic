@@ -4,7 +4,7 @@ _Under construction_
 
 ![XDC FieldMedic Banner](XDC_FieldMedic.jpg)
 
-This Bash script that keeps an eye on XDC masternode RPC endpoints. It pings them regularly, spots if something's off (eg. errors or too much lag) and then SSHes in to reboot the server if needed. Sends notifications via ntfy.sh to 2 channels as well so whoever needs to know is in the loop. I built it to cut down on manual babysitting for my nodes, and figured others might find it handy. Still tweaking it, so follow me [@s4njk4n](https://x.com/s4njk4n) on X if you want updates.
+This Bash script that keeps an eye on XDC masternode RPC endpoints. It pings them regularly, spots if something's off (eg. errors or too much lag) and then SSHes in to reboot the server if needed. Sends notifications via ntfy.sh to 2 channels as well so whoever needs to know is in the loop. I built it to cut down on manual babysitting for my RPCs, and figured others might find it handy. Still tweaking it, so follow me [@s4njk4n](https://x.com/s4njk4n) on X if you want updates.
 
 ## What It Does
 
